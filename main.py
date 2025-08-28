@@ -271,7 +271,7 @@ async def transcribe_audio(file: UploadFile = File(...), enable_speaker_diarizat
         
         response_data = {
             "text": result["text"],
-            "segments": [seg.dict() for seg in segments]
+            "segments": [seg.model_dump() for seg in segments]
         }
         
         # Cache the result for future requests
